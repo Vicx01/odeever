@@ -1,0 +1,183 @@
+  /* CSS Variables & Basic Setup */
+    :root {
+      --bg: #f7f9fb;
+      --card: #ffffff;
+      --muted: #6b7280;
+      --accent: #0f766e;
+      --accent-2: #064e3b;
+      --maxw: 1100px;
+      --radius: 12px;
+      --shadow: 0 6px 20px rgba(16, 24, 40, 0.06);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: #0f172a;
+      line-height: 1.6
+    }
+    
+    /* Added to demo the nav against content */
+    main {
+      height: 200vh;
+      padding-top: 40px;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none
+    }
+
+    /* Base container used by the nav */
+    .container {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 0 28px
+    }
+
+    /* NAV */
+    header {
+      background: linear-gradient(90deg, rgba(15, 118, 110, 0.04), transparent);
+      backdrop-filter: blur(4px);
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 0
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px
+    }
+
+    .logo-img {
+      height: 70px; /* Set height for the logo */
+      width: auto; /* Maintain aspect ratio */
+      object-fit: contain;
+      border-radius: var(--radius); /* rounded corners */
+      display: block;
+    }
+
+
+    .logo {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+      box-shadow: var(--shadow)
+    }
+
+    nav ul {
+      display: flex;
+      gap: 18px;
+      list-style: none;
+      margin: 0;
+      padding: 0
+    }
+
+    nav li {
+      font-weight: 600
+    }
+
+    .cta {
+      background: var(--accent);
+      color: #fff;
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-weight: 700;
+      transition: background-color 0.2s;
+    }
+    .cta:hover {
+      background: var(--accent-2);
+    }
+
+    /* Responsive Nav */
+    @media (max-width:700px) {
+      nav ul {
+        display: none
+      }
+
+      .mobile-menu {
+        display: block
+      }
+      
+      /* Hide desktop CTA on mobile */
+      .cta.desktop-only {
+        display: none;
+      }
+
+      .container {
+        padding: 0 18px
+      }
+    }
+
+    .mobile-menu {
+      display: none;
+      /* Hide by default */
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      font-size: 24px;
+      /* Make icon larger */
+      color: var(--accent-2);
+    }
+
+    /* The mobile dropdown menu container */
+    .mobile-nav-menu {
+      display: none;
+      /* Hidden by default */
+      position: absolute;
+      top: 80px; /* Position below header */
+      left: 0;
+      right: 0;
+      background: var(--card);
+      margin: 0 18px;
+      /* Match container padding */
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 12px;
+      z-index: 50;
+    }
+
+    /* The "open" state, toggled by JS */
+    .mobile-nav-open {
+      display: block;
+    }
+
+    /* Links inside the mobile menu */
+    .mobile-nav-menu a {
+      display: block;
+      padding: 12px 16px;
+      font-weight: 600;
+      border-radius: 8px;
+    }
+
+    .mobile-nav-menu a:hover {
+      background: var(--bg);
+    }
+    
+    /* Add a CTA button inside the mobile menu */
+    .mobile-nav-menu .cta {
+      margin-top: 8px;
+      text-align: center;
+    }
+    
