@@ -1,443 +1,537 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Optimal Development Resources Ltd</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="https://i.ibb.co/rRD8Fdg6/logo.png">
-    
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    
-    <style>
-      body {
-        font-family: 'Inter', sans-serif;
-        color: #2C3E50;
-      }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Optimal Development Resources Ltd</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://i.ibb.co/rRD8Fdg6/logo.png">
 
-      /* Custom Utilities */
-      .text-gradient {
-        background: linear-gradient(135deg, #4A58C3 0%, #2DC7ED 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-      }
-      
-      .bg-gradient-brand {
-        background: linear-gradient(135deg, #2C3E50 0%, #4A58C3 100%);
-      }
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
 
-      .bg-gradient-accent {
-        background: linear-gradient(135deg, #4A58C3 0%, #2DC7ED 100%);
-      }
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #2C3E50;
+    }
 
-      /* Keyframe Animations */
-      @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
-      }
+    /* Custom Utilities */
+    .text-gradient {
+      background: linear-gradient(135deg, #4A58C3 0%, #2DC7ED 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
 
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
+    .bg-gradient-brand {
+      background: linear-gradient(135deg, #2C3E50 0%, #4A58C3 100%);
+    }
 
-      @keyframes slideInLeft {
-        from {
-          opacity: 0;
-          transform: translateX(-20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateX(0);
-        }
-      }
+    .bg-gradient-accent {
+      background: linear-gradient(135deg, #4A58C3 0%, #2DC7ED 100%);
+    }
 
-      @keyframes zoomIn {
-        from {
-          opacity: 0;
-          transform: scale(0.95);
-        }
-        to {
-          opacity: 1;
-          transform: scale(1);
-        }
-      }
-
-      /* Animation Classes */
-      .animate-fade-in {
-        animation: fadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-      }
-
-      .animate-fade-in-up {
-        animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-        opacity: 0; /* Start hidden */
-      }
-
-      .animate-slide-in-left {
-        animation: slideInLeft 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    /* Keyframe Animations */
+    @keyframes fadeIn {
+      from {
         opacity: 0;
       }
 
-      .animate-zoom-in {
-        animation: zoomIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
         opacity: 0;
+        transform: translateY(20px);
       }
 
-      /* Staggered Delays */
-      .delay-100 { animation-delay: 100ms; }
-      .delay-200 { animation-delay: 200ms; }
-      .delay-300 { animation-delay: 300ms; }
-      .delay-400 { animation-delay: 400ms; }
-      .delay-500 { animation-delay: 500ms; }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-      /* Button & Interactive Transitions */
-      .btn-hover {
-        transition: all 0.3s ease;
-      }
-      .btn-hover:hover {
-        transform: translateY(-2px) scale(1.02);
-        box-shadow: 0 10px 15px -3px rgba(45, 199, 237, 0.3), 0 4px 6px -2px rgba(45, 199, 237, 0.1);
-      }
-      .btn-hover:active {
-        transform: translateY(0) scale(0.98);
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-20px);
       }
 
-      /* Card Hover Effects */
-      .card-hover {
-        transition: all 0.3s ease;
+      to {
+        opacity: 1;
+        transform: translateX(0);
       }
-      .card-hover:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        border-color: #2DC7ED;
+    }
+
+    @keyframes zoomIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
       }
-    </style>
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    /* Animation Classes */
+    .animate-fade-in {
+      animation: fadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+
+    .animate-fade-in-up {
+      animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+      opacity: 0;
+      /* Start hidden */
+    }
+
+    .animate-slide-in-left {
+      animation: slideInLeft 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+      opacity: 0;
+    }
+
+    .animate-zoom-in {
+      animation: zoomIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+      opacity: 0;
+    }
+
+    /* Staggered Delays */
+    .delay-100 {
+      animation-delay: 100ms;
+    }
+
+    .delay-200 {
+      animation-delay: 200ms;
+    }
+
+    .delay-300 {
+      animation-delay: 300ms;
+    }
+
+    .delay-400 {
+      animation-delay: 400ms;
+    }
+
+    .delay-500 {
+      animation-delay: 500ms;
+    }
+
+    /* Button & Interactive Transitions */
+    .btn-hover {
+      transition: all 0.3s ease;
+    }
+
+    .btn-hover:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 10px 15px -3px rgba(45, 199, 237, 0.3), 0 4px 6px -2px rgba(45, 199, 237, 0.1);
+    }
+
+    .btn-hover:active {
+      transform: translateY(0) scale(0.98);
+    }
+
+    /* Card Hover Effects */
+    .card-hover {
+      transition: all 0.3s ease;
+    }
+
+    .card-hover:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      border-color: #2DC7ED;
+    }
+  </style>
 </head>
+
 <body class="bg-gray-50 text-[#2C3E50] antialiased">
-    <div class="flex flex-col min-h-screen">
-        <!-- Navbar -->
-        <nav class="bg-white/95 backdrop-blur-sm shadow-sm border-b border-gray-100 fixed w-full z-50 top-0 left-0 transition-all duration-300">
-          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20 items-center">
-              <!-- Logo Section -->
-              <div class="flex-shrink-0 flex items-center">
-                <a href="index.html" class="flex items-center group gap-3">
-                  <img 
-                    src="https://i.ibb.co/rRD8Fdg6/logo.png" 
-                    alt="Optimal Development Resources Logo" 
-                    class="h-10 w-10 md:h-12 md:w-12 object-contain transition-transform duration-300 group-hover:scale-110" 
-                  />
-                  <span class="text-sm md:text-base font-bold text-[#2C3E50] hidden md:block group-hover:text-[#4A58C3] transition-colors leading-tight">
-                    Optimal Development<br class="hidden lg:block"/> Resources Ltd
-                  </span>
+  <div class="flex flex-col min-h-screen">
+    <!-- Navbar -->
+    <nav
+      class="bg-white/95 backdrop-blur-sm shadow-sm border-b border-gray-100 fixed w-full z-50 top-0 left-0 transition-all duration-300">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-20 items-center">
+          <!-- Logo Section -->
+          <div class="flex-shrink-0 flex items-center">
+            <a href="index.html" class="flex items-center group gap-3">
+              <img src="https://i.ibb.co/rRD8Fdg6/logo.png" alt="Optimal Development Resources Logo"
+                class="h-10 w-10 md:h-12 md:w-12 object-contain rounded-lg transition-transform duration-300 group-hover:scale-110" />
+              <span
+                class="text-sm md:text-base font-bold text-[#2C3E50] hidden md:block group-hover:text-[#4A58C3] transition-colors leading-tight">
+                Optimal Development<br class="hidden lg:block" /> Resources Ltd
+              </span>
+            </a>
+          </div>
+
+          <!-- Desktop Navigation -->
+          <div class="hidden md:flex items-center space-x-2 lg:space-x-6">
+            <a href="index.html"
+              class="px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 relative overflow-hidden group text-white bg-[#4A58C3] shadow-md shadow-[#4A58C3]/20">Home</a>
+            <a href="about.html"
+              class="px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 relative overflow-hidden group text-[#2C3E50] hover:text-[#4A58C3] hover:bg-[#2DC7ED]/10">About
+              Us</a>
+            <a href="team.html"
+              class="px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 relative overflow-hidden group text-[#2C3E50] hover:text-[#4A58C3] hover:bg-[#2DC7ED]/10">Our
+              Team</a>
+            <a href="services.html"
+              class="px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 relative overflow-hidden group text-[#2C3E50] hover:text-[#4A58C3] hover:bg-[#2DC7ED]/10">Services</a>
+            <a href="contact.html"
+              class="px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 relative overflow-hidden group text-[#2C3E50] hover:text-[#4A58C3] hover:bg-[#2DC7ED]/10">Contact</a>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <div class="flex items-center md:hidden">
+            <button type="button"
+              class="inline-flex items-center justify-center p-2 rounded-md text-[#2C3E50] hover:text-[#4A58C3] hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#2DC7ED]"
+              aria-controls="mobile-menu" aria-expanded="false" id="mobile-menu-btn">
+              <span class="sr-only">Open main menu</span>
+              <i data-lucide="menu" class="block h-6 w-6" id="menu-icon"></i>
+              <i data-lucide="x" class="hidden h-6 w-6" id="close-icon"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation Menu -->
+      <div class="hidden md:hidden bg-white border-t border-gray-100 animate-fade-in" id="mobile-menu">
+        <div class="px-4 pt-2 pb-4 space-y-1">
+          <a href="index.html"
+            class="block px-3 py-3 rounded-xl text-base font-medium border-l-4 transition-all duration-200 border-[#4A58C3] text-[#4A58C3] bg-[#4A58C3]/5">Home</a>
+          <a href="about.html"
+            class="block px-3 py-3 rounded-xl text-base font-medium border-l-4 transition-all duration-200 border-transparent text-[#2C3E50] hover:text-[#4A58C3] hover:bg-[#2DC7ED]/5 hover:border-[#2DC7ED]">About
+            Us</a>
+          <a href="team.html"
+            class="block px-3 py-3 rounded-xl text-base font-medium border-l-4 transition-all duration-200 border-transparent text-[#2C3E50] hover:text-[#4A58C3] hover:bg-[#2DC7ED]/5 hover:border-[#2DC7ED]">Our
+            Team</a>
+          <a href="services.html"
+            class="block px-3 py-3 rounded-xl text-base font-medium border-l-4 transition-all duration-200 border-transparent text-[#2C3E50] hover:text-[#4A58C3] hover:bg-[#2DC7ED]/5 hover:border-[#2DC7ED]">Services</a>
+          <a href="contact.html"
+            class="block px-3 py-3 rounded-xl text-base font-medium border-l-4 transition-all duration-200 border-transparent text-[#2C3E50] hover:text-[#4A58C3] hover:bg-[#2DC7ED]/5 hover:border-[#2DC7ED]">Contact</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow pt-16">
+      <div>
+        <!-- Hero Section -->
+        <div class="relative bg-[#2C3E50] overflow-hidden">
+          <!-- Modern Gradient Background -->
+          <div class="absolute inset-0 bg-gradient-to-br from-[#2C3E50] via-[#4A58C3] to-[#3A96DE] opacity-90"></div>
+
+          <!-- Background Image Overlay -->
+          <div
+            class="absolute inset-0 opacity-20 mix-blend-overlay bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center">
+          </div>
+
+          <!-- Animated Shapes -->
+          <div
+            class="absolute top-20 right-10 w-64 h-64 bg-[#2DC7ED] rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse">
+          </div>
+          <div
+            class="absolute -bottom-20 -left-20 w-80 h-80 bg-[#4A58C3] rounded-full mix-blend-multiply filter blur-3xl opacity-30">
+          </div>
+
+          <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 md:py-40">
+            <div class="max-w-4xl">
+              <h1
+                class="text-4xl md:text-7xl font-extrabold tracking-tight mb-8 leading-tight text-white animate-fade-in-up">
+                Optimal Development <br />
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#2DC7ED] to-[#3A96DE]">Resources
+                  Ltd</span>
+              </h1>
+              <p
+                class="text-xl md:text-2xl text-[#E3F2FD] mb-10 max-w-3xl font-light leading-relaxed animate-fade-in-up delay-100">
+                Driving partnerships, development, and sustainable growth across Nigeria and beyond.
+              </p>
+              <p
+                class="text-lg text-gray-200 mb-12 max-w-2xl animate-fade-in-up delay-200 border-l-4 border-[#2DC7ED] pl-6">
+                We connect public and private sector organisations with international development partners to create
+                meaningful, long-lasting impact.
+              </p>
+              <div class="flex flex-col sm:flex-row gap-5 animate-fade-in-up delay-300">
+                <a href="contact.html"
+                  class="btn-hover inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-bold rounded-full text-white bg-gradient-to-r from-[#4A58C3] to-[#3A96DE] hover:shadow-[0_0_20px_rgba(45,199,237,0.5)] md:text-lg">
+                  Contact Us <i data-lucide="arrow-right" class="ml-2 h-5 w-5"></i>
+                </a>
+                <a href="about.html"
+                  class="btn-hover inline-flex items-center justify-center px-8 py-4 border-2 border-[#2DC7ED]/50 text-base font-bold rounded-full text-white hover:bg-[#2DC7ED]/10 hover:border-[#2DC7ED] md:text-lg transition-colors backdrop-blur-sm">
+                  Learn More
                 </a>
               </div>
-    
-              <!-- Desktop Navigation -->
-              <div class="hidden md:flex items-center space-x-2 lg:space-x-6">
-                  <a href="index.html" class="px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 relative overflow-hidden group text-white bg-[#4A58C3] shadow-md shadow-[#4A58C3]/20">Home</a>
-                  <a href="about.html" class="px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 relative overflow-hidden group text-[#2C3E50] hover:text-[#4A58C3] hover:bg-[#2DC7ED]/10">About Us</a>
-                  <a href="team.html" class="px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 relative overflow-hidden group text-[#2C3E50] hover:text-[#4A58C3] hover:bg-[#2DC7ED]/10">Our Team</a>
-                  <a href="services.html" class="px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 relative overflow-hidden group text-[#2C3E50] hover:text-[#4A58C3] hover:bg-[#2DC7ED]/10">Services</a>
-                  <a href="contact.html" class="px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 relative overflow-hidden group text-[#2C3E50] hover:text-[#4A58C3] hover:bg-[#2DC7ED]/10">Contact</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- What We Do -->
+        <div class="py-24 bg-white relative">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 animate-fade-in-up">
+              <span
+                class="text-[#4A58C3] font-bold tracking-wider uppercase text-sm bg-[#4A58C3]/10 px-4 py-1.5 rounded-full">Our
+                Expertise</span>
+              <h2 class="mt-4 text-4xl font-extrabold text-[#2C3E50]">What We Do</h2>
+              <p class="mt-4 text-xl text-gray-500 max-w-2xl mx-auto font-light">
+                Comprehensive solutions for sustainable development.
+              </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <!-- Item 1 -->
+              <div
+                class="group card-hover bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl border border-gray-100 animate-fade-in-up transition-all duration-300"
+                style="animation-delay: 200ms;">
+                <div
+                  class="bg-gradient-to-br from-[#4A58C3] to-[#2DC7ED] p-4 rounded-2xl w-fit shadow-md mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <i data-lucide="handshake" class="h-7 w-7 text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-[#2C3E50] mb-3 group-hover:text-[#4A58C3] transition-colors">
+                  Development Partnerships & Diplomacy</h3>
+                <p class="text-gray-500 leading-relaxed">Delivering expertise to foster growth and innovation in this
+                  sector.</p>
               </div>
-    
-              <!-- Mobile Menu Button -->
-              <div class="flex items-center md:hidden">
-                <button
-                  type="button"
-                  class="inline-flex items-center justify-center p-2 rounded-md text-[#2C3E50] hover:text-[#4A58C3] hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#2DC7ED]"
-                  aria-controls="mobile-menu"
-                  aria-expanded="false"
-                  id="mobile-menu-btn"
-                >
-                  <span class="sr-only">Open main menu</span>
-                  <i data-lucide="menu" class="block h-6 w-6" id="menu-icon"></i>
-                  <i data-lucide="x" class="hidden h-6 w-6" id="close-icon"></i>
-                </button>
+              <!-- Item 2 -->
+              <div
+                class="group card-hover bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl border border-gray-100 animate-fade-in-up transition-all duration-300"
+                style="animation-delay: 300ms;">
+                <div
+                  class="bg-gradient-to-br from-[#4A58C3] to-[#2DC7ED] p-4 rounded-2xl w-fit shadow-md mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <i data-lucide="line-chart" class="h-7 w-7 text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-[#2C3E50] mb-3 group-hover:text-[#4A58C3] transition-colors">
+                  Fundraising & Financing</h3>
+                <p class="text-gray-500 leading-relaxed">Delivering expertise to foster growth and innovation in this
+                  sector.</p>
+              </div>
+              <!-- Item 3 -->
+              <div
+                class="group card-hover bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl border border-gray-100 animate-fade-in-up transition-all duration-300"
+                style="animation-delay: 400ms;">
+                <div
+                  class="bg-gradient-to-br from-[#4A58C3] to-[#2DC7ED] p-4 rounded-2xl w-fit shadow-md mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <i data-lucide="trending-up" class="h-7 w-7 text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-[#2C3E50] mb-3 group-hover:text-[#4A58C3] transition-colors">
+                  Feasibility Studies & Business Plans</h3>
+                <p class="text-gray-500 leading-relaxed">Delivering expertise to foster growth and innovation in this
+                  sector.</p>
+              </div>
+              <!-- Item 4 -->
+              <div
+                class="group card-hover bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl border border-gray-100 animate-fade-in-up transition-all duration-300"
+                style="animation-delay: 200ms;">
+                <div
+                  class="bg-gradient-to-br from-[#4A58C3] to-[#2DC7ED] p-4 rounded-2xl w-fit shadow-md mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <i data-lucide="users" class="h-7 w-7 text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-[#2C3E50] mb-3 group-hover:text-[#4A58C3] transition-colors">Training
+                  & Capacity Building</h3>
+                <p class="text-gray-500 leading-relaxed">Delivering expertise to foster growth and innovation in this
+                  sector.</p>
+              </div>
+              <!-- Item 5 -->
+              <div
+                class="group card-hover bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl border border-gray-100 animate-fade-in-up transition-all duration-300"
+                style="animation-delay: 300ms;">
+                <div
+                  class="bg-gradient-to-br from-[#4A58C3] to-[#2DC7ED] p-4 rounded-2xl w-fit shadow-md mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <i data-lucide="cpu" class="h-7 w-7 text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-[#2C3E50] mb-3 group-hover:text-[#4A58C3] transition-colors">
+                  Technology Transfer Initiatives</h3>
+                <p class="text-gray-500 leading-relaxed">Delivering expertise to foster growth and innovation in this
+                  sector.</p>
+              </div>
+              <!-- Item 6 -->
+              <div
+                class="group card-hover bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl border border-gray-100 animate-fade-in-up transition-all duration-300"
+                style="animation-delay: 400ms;">
+                <div
+                  class="bg-gradient-to-br from-[#4A58C3] to-[#2DC7ED] p-4 rounded-2xl w-fit shadow-md mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <i data-lucide="globe" class="h-7 w-7 text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-[#2C3E50] mb-3 group-hover:text-[#4A58C3] transition-colors">
+                  Investment Matchmaking</h3>
+                <p class="text-gray-500 leading-relaxed">Delivering expertise to foster growth and innovation in this
+                  sector.</p>
               </div>
             </div>
           </div>
-    
-          <!-- Mobile Navigation Menu -->
-          <div class="hidden md:hidden bg-white border-t border-gray-100 animate-fade-in" id="mobile-menu">
-            <div class="px-4 pt-2 pb-4 space-y-1">
-                <a href="index.html" class="block px-3 py-3 rounded-xl text-base font-medium border-l-4 transition-all duration-200 border-[#4A58C3] text-[#4A58C3] bg-[#4A58C3]/5">Home</a>
-                <a href="about.html" class="block px-3 py-3 rounded-xl text-base font-medium border-l-4 transition-all duration-200 border-transparent text-[#2C3E50] hover:text-[#4A58C3] hover:bg-[#2DC7ED]/5 hover:border-[#2DC7ED]">About Us</a>
-                <a href="team.html" class="block px-3 py-3 rounded-xl text-base font-medium border-l-4 transition-all duration-200 border-transparent text-[#2C3E50] hover:text-[#4A58C3] hover:bg-[#2DC7ED]/5 hover:border-[#2DC7ED]">Our Team</a>
-                <a href="services.html" class="block px-3 py-3 rounded-xl text-base font-medium border-l-4 transition-all duration-200 border-transparent text-[#2C3E50] hover:text-[#4A58C3] hover:bg-[#2DC7ED]/5 hover:border-[#2DC7ED]">Services</a>
-                <a href="contact.html" class="block px-3 py-3 rounded-xl text-base font-medium border-l-4 transition-all duration-200 border-transparent text-[#2C3E50] hover:text-[#4A58C3] hover:bg-[#2DC7ED]/5 hover:border-[#2DC7ED]">Contact</a>
+        </div>
+
+        <!-- Why Choose Us -->
+        <div class="py-24 bg-[#F8FAFC]">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-20 items-center">
+              <div class="animate-slide-in-left">
+                <h2 class="text-4xl font-extrabold text-[#2C3E50] mb-8 relative">
+                  Why Choose Us
+                  <span class="block h-1.5 w-20 bg-[#2DC7ED] mt-2 rounded-full"></span>
+                </h2>
+                <div class="space-y-8">
+                  <div class="flex items-start" style="animation-delay: 0ms;">
+                    <div class="flex-shrink-0 mt-1">
+                      <div class="bg-[#2DC7ED]/10 rounded-full p-1">
+                        <i data-lucide="check-circle" class="h-6 w-6 text-[#2DC7ED]"></i>
+                      </div>
+                    </div>
+                    <p class="ml-5 text-lg text-[#2C3E50] font-medium leading-relaxed">Decades of combined experience
+                      across key socio-economic sectors</p>
+                  </div>
+                  <div class="flex items-start" style="animation-delay: 100ms;">
+                    <div class="flex-shrink-0 mt-1">
+                      <div class="bg-[#2DC7ED]/10 rounded-full p-1">
+                        <i data-lucide="check-circle" class="h-6 w-6 text-[#2DC7ED]"></i>
+                      </div>
+                    </div>
+                    <p class="ml-5 text-lg text-[#2C3E50] font-medium leading-relaxed">Strong relationships with global
+                      development partners</p>
+                  </div>
+                  <div class="flex items-start" style="animation-delay: 200ms;">
+                    <div class="flex-shrink-0 mt-1">
+                      <div class="bg-[#2DC7ED]/10 rounded-full p-1">
+                        <i data-lucide="check-circle" class="h-6 w-6 text-[#2DC7ED]"></i>
+                      </div>
+                    </div>
+                    <p class="ml-5 text-lg text-[#2C3E50] font-medium leading-relaxed">Proven advisory track record with
+                      MDAs and international institutions</p>
+                  </div>
+                  <div class="flex items-start" style="animation-delay: 300ms;">
+                    <div class="flex-shrink-0 mt-1">
+                      <div class="bg-[#2DC7ED]/10 rounded-full p-1">
+                        <i data-lucide="check-circle" class="h-6 w-6 text-[#2DC7ED]"></i>
+                      </div>
+                    </div>
+                    <p class="ml-5 text-lg text-[#2C3E50] font-medium leading-relaxed">Deep understanding of Nigeria’s
+                      development landscape</p>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-16 lg:mt-0 animate-fade-in-up delay-300 relative">
+                <div
+                  class="absolute -inset-4 bg-gradient-to-r from-[#4A58C3] to-[#2DC7ED] rounded-2xl opacity-30 blur-lg">
+                </div>
+                <img
+                  src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1471&q=80"
+                  alt="Team collaboration"
+                  class="relative rounded-2xl shadow-2xl hover:scale-[1.02] transition-transform duration-500 border-4 border-white" />
+              </div>
             </div>
           </div>
-        </nav>
+        </div>
+      </div>
+    </main>
 
-        <!-- Main Content -->
-        <main class="flex-grow pt-16">
-            <div>
-            <!-- Hero Section -->
-              <div class="relative bg-[#2C3E50] overflow-hidden">
-                <!-- Modern Gradient Background -->
-                <div class="absolute inset-0 bg-gradient-to-br from-[#2C3E50] via-[#4A58C3] to-[#3A96DE] opacity-90"></div>
-                
-                <!-- Background Image Overlay -->
-                <div class="absolute inset-0 opacity-20 mix-blend-overlay bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center"></div>
-                
-                <!-- Animated Shapes -->
-                <div class="absolute top-20 right-10 w-64 h-64 bg-[#2DC7ED] rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
-                <div class="absolute -bottom-20 -left-20 w-80 h-80 bg-[#4A58C3] rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
-        
-                <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 md:py-40">
-                  <div class="max-w-4xl">
-                    <h1 class="text-4xl md:text-7xl font-extrabold tracking-tight mb-8 leading-tight text-white animate-fade-in-up">
-                      Optimal Development <br />
-                      <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#2DC7ED] to-[#3A96DE]">Resources Ltd</span>
-                    </h1>
-                    <p class="text-xl md:text-2xl text-[#E3F2FD] mb-10 max-w-3xl font-light leading-relaxed animate-fade-in-up delay-100">
-                      Driving partnerships, development, and sustainable growth across Nigeria and beyond.
-                    </p>
-                    <p class="text-lg text-gray-200 mb-12 max-w-2xl animate-fade-in-up delay-200 border-l-4 border-[#2DC7ED] pl-6">
-                      We connect public and private sector organisations with international development partners to create meaningful, long-lasting impact.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-5 animate-fade-in-up delay-300">
-                      <a 
-                        href="contact.html" 
-                        class="btn-hover inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-bold rounded-full text-white bg-gradient-to-r from-[#4A58C3] to-[#3A96DE] hover:shadow-[0_0_20px_rgba(45,199,237,0.5)] md:text-lg"
-                      >
-                        Contact Us <i data-lucide="arrow-right" class="ml-2 h-5 w-5"></i>
-                      </a>
-                      <a 
-                        href="about.html" 
-                        class="btn-hover inline-flex items-center justify-center px-8 py-4 border-2 border-[#2DC7ED]/50 text-base font-bold rounded-full text-white hover:bg-[#2DC7ED]/10 hover:border-[#2DC7ED] md:text-lg transition-colors backdrop-blur-sm"
-                      >
-                        Learn More
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-        
-              <!-- What We Do -->
-              <div class="py-24 bg-white relative">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                  <div class="text-center mb-16 animate-fade-in-up">
-                    <span class="text-[#4A58C3] font-bold tracking-wider uppercase text-sm bg-[#4A58C3]/10 px-4 py-1.5 rounded-full">Our Expertise</span>
-                    <h2 class="mt-4 text-4xl font-extrabold text-[#2C3E50]">What We Do</h2>
-                    <p class="mt-4 text-xl text-gray-500 max-w-2xl mx-auto font-light">
-                      Comprehensive solutions for sustainable development.
-                    </p>
-                  </div>
-                  
-                  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                      <!-- Item 1 -->
-                      <div class="group card-hover bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl border border-gray-100 animate-fade-in-up transition-all duration-300" style="animation-delay: 200ms;">
-                        <div class="bg-gradient-to-br from-[#4A58C3] to-[#2DC7ED] p-4 rounded-2xl w-fit shadow-md mb-6 group-hover:scale-110 transition-transform duration-300">
-                          <i data-lucide="handshake" class="h-7 w-7 text-white"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-[#2C3E50] mb-3 group-hover:text-[#4A58C3] transition-colors">Development Partnerships & Diplomacy</h3>
-                        <p class="text-gray-500 leading-relaxed">Delivering expertise to foster growth and innovation in this sector.</p>
-                      </div>
-                      <!-- Item 2 -->
-                      <div class="group card-hover bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl border border-gray-100 animate-fade-in-up transition-all duration-300" style="animation-delay: 300ms;">
-                        <div class="bg-gradient-to-br from-[#4A58C3] to-[#2DC7ED] p-4 rounded-2xl w-fit shadow-md mb-6 group-hover:scale-110 transition-transform duration-300">
-                          <i data-lucide="line-chart" class="h-7 w-7 text-white"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-[#2C3E50] mb-3 group-hover:text-[#4A58C3] transition-colors">Fundraising & Financing</h3>
-                        <p class="text-gray-500 leading-relaxed">Delivering expertise to foster growth and innovation in this sector.</p>
-                      </div>
-                      <!-- Item 3 -->
-                      <div class="group card-hover bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl border border-gray-100 animate-fade-in-up transition-all duration-300" style="animation-delay: 400ms;">
-                        <div class="bg-gradient-to-br from-[#4A58C3] to-[#2DC7ED] p-4 rounded-2xl w-fit shadow-md mb-6 group-hover:scale-110 transition-transform duration-300">
-                          <i data-lucide="trending-up" class="h-7 w-7 text-white"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-[#2C3E50] mb-3 group-hover:text-[#4A58C3] transition-colors">Feasibility Studies & Business Plans</h3>
-                        <p class="text-gray-500 leading-relaxed">Delivering expertise to foster growth and innovation in this sector.</p>
-                      </div>
-                      <!-- Item 4 -->
-                      <div class="group card-hover bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl border border-gray-100 animate-fade-in-up transition-all duration-300" style="animation-delay: 200ms;">
-                        <div class="bg-gradient-to-br from-[#4A58C3] to-[#2DC7ED] p-4 rounded-2xl w-fit shadow-md mb-6 group-hover:scale-110 transition-transform duration-300">
-                          <i data-lucide="users" class="h-7 w-7 text-white"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-[#2C3E50] mb-3 group-hover:text-[#4A58C3] transition-colors">Training & Capacity Building</h3>
-                        <p class="text-gray-500 leading-relaxed">Delivering expertise to foster growth and innovation in this sector.</p>
-                      </div>
-                      <!-- Item 5 -->
-                      <div class="group card-hover bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl border border-gray-100 animate-fade-in-up transition-all duration-300" style="animation-delay: 300ms;">
-                        <div class="bg-gradient-to-br from-[#4A58C3] to-[#2DC7ED] p-4 rounded-2xl w-fit shadow-md mb-6 group-hover:scale-110 transition-transform duration-300">
-                          <i data-lucide="cpu" class="h-7 w-7 text-white"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-[#2C3E50] mb-3 group-hover:text-[#4A58C3] transition-colors">Technology Transfer Initiatives</h3>
-                        <p class="text-gray-500 leading-relaxed">Delivering expertise to foster growth and innovation in this sector.</p>
-                      </div>
-                      <!-- Item 6 -->
-                      <div class="group card-hover bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl border border-gray-100 animate-fade-in-up transition-all duration-300" style="animation-delay: 400ms;">
-                        <div class="bg-gradient-to-br from-[#4A58C3] to-[#2DC7ED] p-4 rounded-2xl w-fit shadow-md mb-6 group-hover:scale-110 transition-transform duration-300">
-                          <i data-lucide="globe" class="h-7 w-7 text-white"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-[#2C3E50] mb-3 group-hover:text-[#4A58C3] transition-colors">Investment Matchmaking</h3>
-                        <p class="text-gray-500 leading-relaxed">Delivering expertise to foster growth and innovation in this sector.</p>
-                      </div>
-                  </div>
-                </div>
-              </div>
-        
-              <!-- Why Choose Us -->
-              <div class="py-24 bg-[#F8FAFC]">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                  <div class="lg:grid lg:grid-cols-2 lg:gap-20 items-center">
-                    <div class="animate-slide-in-left">
-                      <h2 class="text-4xl font-extrabold text-[#2C3E50] mb-8 relative">
-                        Why Choose Us
-                        <span class="block h-1.5 w-20 bg-[#2DC7ED] mt-2 rounded-full"></span>
-                      </h2>
-                      <div class="space-y-8">
-                          <div class="flex items-start" style="animation-delay: 0ms;">
-                            <div class="flex-shrink-0 mt-1">
-                              <div class="bg-[#2DC7ED]/10 rounded-full p-1">
-                                <i data-lucide="check-circle" class="h-6 w-6 text-[#2DC7ED]"></i>
-                              </div>
-                            </div>
-                            <p class="ml-5 text-lg text-[#2C3E50] font-medium leading-relaxed">Decades of combined experience across key socio-economic sectors</p>
-                          </div>
-                          <div class="flex items-start" style="animation-delay: 100ms;">
-                            <div class="flex-shrink-0 mt-1">
-                              <div class="bg-[#2DC7ED]/10 rounded-full p-1">
-                                <i data-lucide="check-circle" class="h-6 w-6 text-[#2DC7ED]"></i>
-                              </div>
-                            </div>
-                            <p class="ml-5 text-lg text-[#2C3E50] font-medium leading-relaxed">Strong relationships with global development partners</p>
-                          </div>
-                          <div class="flex items-start" style="animation-delay: 200ms;">
-                            <div class="flex-shrink-0 mt-1">
-                              <div class="bg-[#2DC7ED]/10 rounded-full p-1">
-                                <i data-lucide="check-circle" class="h-6 w-6 text-[#2DC7ED]"></i>
-                              </div>
-                            </div>
-                            <p class="ml-5 text-lg text-[#2C3E50] font-medium leading-relaxed">Proven advisory track record with MDAs and international institutions</p>
-                          </div>
-                          <div class="flex items-start" style="animation-delay: 300ms;">
-                            <div class="flex-shrink-0 mt-1">
-                              <div class="bg-[#2DC7ED]/10 rounded-full p-1">
-                                <i data-lucide="check-circle" class="h-6 w-6 text-[#2DC7ED]"></i>
-                              </div>
-                            </div>
-                            <p class="ml-5 text-lg text-[#2C3E50] font-medium leading-relaxed">Deep understanding of Nigeria’s development landscape</p>
-                          </div>
-                      </div>
-                    </div>
-                    <div class="mt-16 lg:mt-0 animate-fade-in-up delay-300 relative">
-                      <div class="absolute -inset-4 bg-gradient-to-r from-[#4A58C3] to-[#2DC7ED] rounded-2xl opacity-30 blur-lg"></div>
-                      <img 
-                        src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1471&q=80" 
-                        alt="Team collaboration" 
-                        class="relative rounded-2xl shadow-2xl hover:scale-[1.02] transition-transform duration-500 border-4 border-white"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-        </main>
+    <!-- Footer -->
+    <footer class="bg-[#2C3E50] text-white relative overflow-hidden">
+      <!-- Decorative gradient blob -->
+      <div
+        class="absolute top-0 right-0 -mt-20 -mr-20 w-96 h-96 bg-[#4A58C3] rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse">
+      </div>
 
-        <!-- Footer -->
-        <footer class="bg-[#2C3E50] text-white relative overflow-hidden">
-          <!-- Decorative gradient blob -->
-          <div class="absolute top-0 right-0 -mt-20 -mr-20 w-96 h-96 bg-[#4A58C3] rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
-          
-          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-              <!-- Company Info -->
-              <div>
-                <h3 class="text-2xl font-bold mb-6 bg-gradient-to-r from-white to-[#2DC7ED] bg-clip-text text-transparent inline-block">
-                  Optimal Development Resources
-                </h3>
-                <p class="text-gray-300 text-sm leading-relaxed max-w-xs">
-                  Driving partnerships, development, and sustainable growth across Nigeria and beyond. Connecting vision with execution.
-                </p>
-                <div class="mt-6">
-                  <span class="inline-block px-3 py-1 bg-[#4A58C3]/30 rounded-full text-[#2DC7ED] text-xs font-semibold border border-[#4A58C3]/50">
-                    Abuja, Nigeria
-                  </span>
-                </div>
-              </div>
-    
-              <!-- Quick Links -->
-              <div>
-                <h3 class="text-lg font-semibold mb-6 text-[#2DC7ED]">Quick Links</h3>
-                <ul class="space-y-3 text-sm">
-                  <li>
-                    <a href="about.html" class="hover:text-[#2DC7ED] hover:translate-x-1 transition-all inline-block duration-200">About Us</a>
-                  </li>
-                  <li>
-                    <a href="team.html" class="hover:text-[#2DC7ED] hover:translate-x-1 transition-all inline-block duration-200">Our Team</a>
-                  </li>
-                  <li>
-                    <a href="services.html" class="hover:text-[#2DC7ED] hover:translate-x-1 transition-all inline-block duration-200">Services</a>
-                  </li>
-                  <li>
-                    <a href="contact.html" class="hover:text-[#2DC7ED] hover:translate-x-1 transition-all inline-block duration-200">Contact</a>
-                  </li>
-                </ul>
-              </div>
-    
-              <!-- Contact Details -->
-              <div>
-                <h3 class="text-lg font-semibold mb-6 text-[#2DC7ED]">Contact Us</h3>
-                <ul class="space-y-4 text-sm text-gray-300">
-                  <li class="flex items-start">
-                    <span class="block mt-1 w-2 h-2 rounded-full bg-[#3A96DE] mr-3"></span>
-                    <span>7, Cubango Close, Off Katsina Ala Street,<br/>Maitama, Abuja, Nigeria</span>
-                  </li>
-                  <li class="flex items-center">
-                    <span class="block w-2 h-2 rounded-full bg-[#3A96DE] mr-3"></span>
-                    <span class="font-mono text-white">+234 802 312 6745</span>
-                  </li>
-                  <li class="flex items-center">
-                    <span class="block w-2 h-2 rounded-full bg-[#3A96DE] mr-3"></span>
-                    <span class="border-b border-gray-600 hover:border-[#2DC7ED] hover:text-[#2DC7ED] transition-colors cursor-pointer">mails@odeever.com</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            
-            <div class="border-t border-[#3A96DE]/20 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400">
-              <p>&copy; <span id="year"></span> Optimal Development Resources Ltd. All rights reserved.</p>
-              <p class="mt-2 md:mt-0 opacity-70">Designed for Impact.</p>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <!-- Company Info -->
+          <div>
+            <h3
+              class="text-2xl font-bold mb-6 bg-gradient-to-r from-white to-[#2DC7ED] bg-clip-text text-transparent inline-block">
+              Optimal Development Resources
+            </h3>
+            <p class="text-gray-300 text-sm leading-relaxed max-w-xs">
+              Driving partnerships, development, and sustainable growth across Nigeria and beyond. Connecting vision
+              with execution.
+            </p>
+            <div class="mt-6">
+              <span
+                class="inline-block px-3 py-1 bg-[#4A58C3]/30 rounded-full text-[#2DC7ED] text-xs font-semibold border border-[#4A58C3]/50">
+                Abuja, Nigeria
+              </span>
             </div>
           </div>
-        </footer>
-    </div>
 
-    <!-- Scripts -->
-    <script>
-      // Initialize Lucide Icons
-      lucide.createIcons();
+          <!-- Quick Links -->
+          <div>
+            <h3 class="text-lg font-semibold mb-6 text-[#2DC7ED]">Quick Links</h3>
+            <ul class="space-y-3 text-sm">
+              <li>
+                <a href="about.html"
+                  class="hover:text-[#2DC7ED] hover:translate-x-1 transition-all inline-block duration-200">About Us</a>
+              </li>
+              <li>
+                <a href="team.html"
+                  class="hover:text-[#2DC7ED] hover:translate-x-1 transition-all inline-block duration-200">Our Team</a>
+              </li>
+              <li>
+                <a href="services.html"
+                  class="hover:text-[#2DC7ED] hover:translate-x-1 transition-all inline-block duration-200">Services</a>
+              </li>
+              <li>
+                <a href="contact.html"
+                  class="hover:text-[#2DC7ED] hover:translate-x-1 transition-all inline-block duration-200">Contact</a>
+              </li>
+            </ul>
+          </div>
 
-      // Update Year
-      document.getElementById('year').textContent = new Date().getFullYear();
+          <!-- Contact Details -->
+          <div>
+            <h3 class="text-lg font-semibold mb-6 text-[#2DC7ED]">Contact Us</h3>
+            <ul class="space-y-4 text-sm text-gray-300">
+              <li class="flex items-start">
+                <span class="block mt-1 w-2 h-2 rounded-full bg-[#3A96DE] mr-3"></span>
+                <span>7, Cubango Close, Off Katsina Ala Street,<br />Maitama, Abuja, Nigeria</span>
+              </li>
+              <li class="flex items-center">
+                <span class="block w-2 h-2 rounded-full bg-[#3A96DE] mr-3"></span>
+                <span class="font-mono text-white">+234 802 312 6745</span>
+              </li>
+              <li class="flex items-center">
+                <span class="block w-2 h-2 rounded-full bg-[#3A96DE] mr-3"></span>
+                <span
+                  class="border-b border-gray-600 hover:border-[#2DC7ED] hover:text-[#2DC7ED] transition-colors cursor-pointer">mails@odeever.com</span>
+              </li>
+            </ul>
+          </div>
+        </div>
 
-      // Mobile Menu Toggle
-      const btn = document.getElementById('mobile-menu-btn');
-      const menu = document.getElementById('mobile-menu');
-      const menuIcon = document.getElementById('menu-icon');
-      const closeIcon = document.getElementById('close-icon');
+        <div
+          class="border-t border-[#3A96DE]/20 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400">
+          <p>&copy; <span id="year"></span> Optimal Development Resources Ltd. All rights reserved.</p>
+          <p class="mt-2 md:mt-0 opacity-70">Designed for Impact.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
 
-      btn.addEventListener('click', () => {
-        const isExpanded = btn.getAttribute('aria-expanded') === 'true';
-        btn.setAttribute('aria-expanded', !isExpanded);
-        menu.classList.toggle('hidden');
-        menuIcon.classList.toggle('hidden');
-        closeIcon.classList.toggle('hidden');
-      });
-    </script>
+  <!-- Scripts -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Update Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile Menu Toggle
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+
+    btn.addEventListener('click', () => {
+      const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', !isExpanded);
+      menu.classList.toggle('hidden');
+      menuIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+    });
+  </script>
 </body>
+
 </html>
