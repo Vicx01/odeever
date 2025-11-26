@@ -160,6 +160,29 @@
       box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
       border-color: #2DC7ED;
     }
+
+    /* Carousel Animations */
+    .carousel-slide {
+      transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.7s ease;
+    }
+
+    .slide-active {
+      opacity: 1;
+      transform: translateX(0) scale(1);
+      z-index: 20;
+    }
+
+    .slide-exit-left {
+      opacity: 0;
+      transform: translateX(-20%) scale(0.95);
+      z-index: 10;
+    }
+
+    .slide-exit-right {
+      opacity: 0;
+      transform: translateX(20%) scale(0.95);
+      z-index: 10;
+    }
   </style>
 </head>
 
@@ -241,9 +264,7 @@
           <div id="carousel-slides" class="absolute inset-0 w-full h-full">
 
             <!-- Slide 1: Original Hero -->
-            <div
-              class="carousel-slide absolute inset-0 w-full h-full transition-all duration-1000 ease-in-out transform opacity-100 scale-100 z-20"
-              data-index="0">
+            <div class="carousel-slide absolute inset-0 w-full h-full" data-index="0">
               <!-- Background -->
               <div class="absolute inset-0 bg-gradient-to-br from-[#2C3E50] via-[#4A58C3] to-[#3A96DE] opacity-90">
               </div>
@@ -291,9 +312,7 @@
             </div>
 
             <!-- Slide 2: Partnership Facilitation -->
-            <div
-              class="carousel-slide absolute inset-0 w-full h-full transition-all duration-1000 ease-in-out transform opacity-0 scale-105 z-10"
-              data-index="1">
+            <div class="carousel-slide absolute inset-0 w-full h-full" data-index="1">
               <!-- Background -->
               <div class="absolute inset-0 bg-gradient-to-br from-[#2C3E50] via-[#4A58C3] to-[#3A96DE] opacity-90">
               </div>
@@ -334,9 +353,7 @@
             </div>
 
             <!-- Slide 3: Fundraising -->
-            <div
-              class="carousel-slide absolute inset-0 w-full h-full transition-all duration-1000 ease-in-out transform opacity-0 scale-105 z-10"
-              data-index="2">
+            <div class="carousel-slide absolute inset-0 w-full h-full" data-index="2">
               <!-- Background -->
               <div class="absolute inset-0 bg-gradient-to-br from-[#2C3E50] via-[#4A58C3] to-[#3A96DE] opacity-90">
               </div>
@@ -413,63 +430,93 @@
 
           <!-- Carousel Script -->
           <script>
+            // Carousel Logic
             const slides = document.querySelectorAll('.carousel-slide');
             const indicators = document.querySelectorAll('#carousel-indicators button');
+            const carousel = document.getElementById('hero-carousel');
             let currentSlide = 0;
             let slideInterval;
+            let touchStartX = 0;
+            let touchEndX = 0;
 
-            function updateSlides() {
+            function updateSlides(direction = 'next') {
               slides.forEach((slide, index) => {
+                // Reset classes
+                slide.classList.remove('slide-active', 'slide-exit-left', 'slide-exit-right');
+
                 if (index === currentSlide) {
-                  // Active Slide
-                  slide.classList.remove('opacity-0', 'scale-105', 'z-10');
-                  slide.classList.add('opacity-100', 'scale-100', 'z-20');
+                  slide.classList.add('slide-active');
                 } else {
-                  // Inactive Slide
-                  slide.classList.remove('opacity-100', 'scale-100', 'z-20');
-                  slide.classList.add('opacity-0', 'scale-105', 'z-10');
+                  // Determine exit direction based on navigation
+                  if (direction === 'next') {
+                    slide.classList.add('slide-exit-left');
+                  } else {
+                    slide.classList.add('slide-exit-right');
+                  }
                 }
               });
 
-              // Update Indicators
-              indicators.forEach((dot, index) => {
+              // Update indicators
+              indicators.forEach((indicator, index) => {
                 if (index === currentSlide) {
-                  dot.classList.remove('bg-white/30', 'hover:bg-white/60');
-                  dot.classList.add('bg-white');
+                  indicator.classList.remove('bg-white/30', 'hover:bg-white/60');
+                  indicator.classList.add('bg-white');
                 } else {
-                  dot.classList.add('bg-white/30', 'hover:bg-white/60');
-                  dot.classList.remove('bg-white');
+                  indicator.classList.add('bg-white/30', 'hover:bg-white/60');
+                  indicator.classList.remove('bg-white');
                 }
               });
             }
 
             function nextSlide() {
               currentSlide = (currentSlide + 1) % slides.length;
-              updateSlides();
+              updateSlides('next');
             }
 
             function prevSlide() {
               currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-              updateSlides();
+              updateSlides('prev');
             }
 
             function goToSlide(index) {
+              const direction = index > currentSlide ? 'next' : 'prev';
               currentSlide = index;
-              updateSlides();
+              updateSlides(direction);
               resetInterval();
             }
 
             function resetInterval() {
               clearInterval(slideInterval);
-              slideInterval = setInterval(nextSlide, 7000);
+              slideInterval = setInterval(nextSlide, 5000);
             }
 
             // Initialize
             updateSlides();
             resetInterval();
 
+            // Touch Events for Swipe
+            carousel.addEventListener('touchstart', e => {
+              touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+
+            carousel.addEventListener('touchend', e => {
+              touchEndX = e.changedTouches[0].screenX;
+              handleSwipe();
+            }, { passive: true });
+
+            function handleSwipe() {
+              const threshold = 50;
+              if (touchEndX < touchStartX - threshold) {
+                nextSlide(); // Swipe Left -> Next
+                resetInterval();
+              }
+              if (touchEndX > touchStartX + threshold) {
+                prevSlide(); // Swipe Right -> Prev
+                resetInterval();
+              }
+            }
+
             // Pause on hover
-            const carousel = document.getElementById('hero-carousel');
             carousel.addEventListener('mouseenter', () => clearInterval(slideInterval));
             carousel.addEventListener('mouseleave', resetInterval);
           </script>
