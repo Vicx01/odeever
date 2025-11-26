@@ -420,6 +420,263 @@
             }
         });
     </script>
+    <!-- FAB and Contact Modal -->
+    <div class="relative z-[9999]">
+        <style>
+            @keyframes fabFadeInUp {
+                0% {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+
+                100% {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .animate-fab-in {
+                animation: fabFadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            }
+        </style>
+
+        <!-- FAB Container -->
+        <div class="fixed bottom-6 right-6 z-[9999] flex items-center gap-3 animate-fab-in"
+            style="animation-delay: 0.5s; opacity: 0;">
+            <!-- Bubble -->
+            <div class="bg-white/90 backdrop-blur-md text-[#2C3E50] px-4 py-2 rounded-full shadow-lg border border-gray-100 font-semibold text-sm hidden sm:block transform transition-transform hover:scale-105 cursor-pointer"
+                onclick="document.getElementById('fab-contact-btn').click()">
+                Get in Touch
+            </div>
+
+            <!-- FAB Button -->
+            <button id="fab-contact-btn"
+                class="p-4 rounded-full bg-gradient-to-r from-[#4A58C3] to-[#3A96DE] text-white shadow-lg hover:shadow-2xl hover:scale-110 transition-all duration-300 backdrop-blur-md border border-white/20 group relative">
+                <div class="absolute inset-0 rounded-full bg-white/20 blur-sm group-hover:blur-md transition-all"></div>
+                <!-- Inline Message Square Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="relative z-10">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Modal -->
+        <div id="fab-contact-modal" class="fixed inset-0 z-[10000] hidden" aria-labelledby="modal-title" role="dialog"
+            aria-modal="true">
+            <!-- Backdrop -->
+            <div class="fixed inset-0 bg-gray-900/75 backdrop-blur-sm transition-opacity opacity-0"
+                id="fab-modal-backdrop">
+            </div>
+
+            <div class="fixed inset-0 z-10 overflow-y-auto">
+                <div class="flex min-h-full items-center justify-center p-4 text-center sm:p-0">
+                    <div class="relative transform overflow-hidden rounded-2xl bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg border border-gray-100 scale-95 opacity-0"
+                        id="fab-modal-panel">
+                        <!-- Close Button -->
+                        <button type="button" id="fab-modal-close"
+                            class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 focus:outline-none z-50 bg-gray-100 hover:bg-gray-200 rounded-full p-2 transition-colors shadow-sm w-10 h-10 flex items-center justify-center">
+                            <span class="sr-only">Close</span>
+                            <!-- Inline X Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M18 6 6 18" />
+                                <path d="m6 6 18 12" />
+                            </svg>
+                        </button>
+
+                        <!-- Modal Content -->
+                        <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4 relative overflow-hidden">
+                            <!-- Decorative Background -->
+                            <div
+                                class="absolute top-0 left-0 w-full h-24 bg-gradient-to-r from-[#4A58C3] to-[#3A96DE] opacity-10">
+                            </div>
+                            <div
+                                class="absolute -top-10 -right-10 w-32 h-32 bg-[#2DC7ED] rounded-full mix-blend-multiply filter blur-3xl opacity-20">
+                            </div>
+
+                            <div class="relative z-10">
+                                <div class="text-center mb-6">
+                                    <div
+                                        class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-[#4A58C3]/10 mb-4">
+                                        <!-- Inline Mail Icon -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" class="text-[#4A58C3]">
+                                            <rect width="20" height="16" x="2" y="4" rx="2" />
+                                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                                        </svg>
+                                    </div>
+                                    <h3 class="text-2xl font-bold text-[#2C3E50]" id="modal-title">Contact Us</h3>
+                                    <p class="text-sm text-gray-500 mt-2">Send us a message and we'll get back to you
+                                        shortly.</p>
+                                </div>
+
+                                <!-- Success Message -->
+                                <div id="fab-success-message"
+                                    class="hidden flex flex-col items-center justify-center py-8 text-center">
+                                    <div class="bg-green-100 p-3 rounded-full mb-3">
+                                        <!-- Inline Check Circle Icon -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" class="text-green-600">
+                                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                            <path d="M22 4 12 14.01l-3-3" />
+                                        </svg>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-[#2C3E50] mb-2">Message Sent!</h3>
+                                    <p class="text-gray-600 mb-6 text-sm">Thank you for contacting us.</p>
+                                    <button type="button" id="fab-send-another"
+                                        class="px-4 py-2 bg-[#4A58C3] text-white rounded-lg hover:bg-[#3A96DE] transition-colors text-sm font-medium">
+                                        Send Another Message
+                                    </button>
+                                </div>
+
+                                <!-- Form -->
+                                <form id="fab-contact-form" action="https://formspree.io/f/mdkbojzk" method="POST"
+                                    class="space-y-4">
+                                    <div>
+                                        <label htmlFor="fab-name"
+                                            class="block text-xs font-semibold text-[#2C3E50] uppercase tracking-wider">Name</label>
+                                        <input type="text" name="name" id="fab-name" required
+                                            class="mt-1 block w-full rounded-lg border-gray-200 bg-gray-50 shadow-sm focus:border-[#4A58C3] focus:ring-[#4A58C3] focus:bg-white sm:text-sm p-3 border transition-all duration-200"
+                                            placeholder="Your Full Name" />
+                                    </div>
+
+                                    <div>
+                                        <label htmlFor="fab-email"
+                                            class="block text-xs font-semibold text-[#2C3E50] uppercase tracking-wider">Email</label>
+                                        <input type="email" name="email" id="fab-email" required
+                                            class="mt-1 block w-full rounded-lg border-gray-200 bg-gray-50 shadow-sm focus:border-[#4A58C3] focus:ring-[#4A58C3] focus:bg-white sm:text-sm p-3 border transition-all duration-200"
+                                            placeholder="you@example.com" />
+                                    </div>
+
+                                    <div>
+                                        <label htmlFor="fab-phone"
+                                            class="block text-xs font-semibold text-[#2C3E50] uppercase tracking-wider">Phone</label>
+                                        <input type="tel" name="phone" id="fab-phone"
+                                            class="mt-1 block w-full rounded-lg border-gray-200 bg-gray-50 shadow-sm focus:border-[#4A58C3] focus:ring-[#4A58C3] focus:bg-white sm:text-sm p-3 border transition-all duration-200"
+                                            placeholder="+234..." />
+                                    </div>
+
+                                    <div>
+                                        <label htmlFor="fab-message"
+                                            class="block text-xs font-semibold text-[#2C3E50] uppercase tracking-wider">Message</label>
+                                        <textarea name="message" id="fab-message" rows="3" required
+                                            class="mt-1 block w-full rounded-lg border-gray-200 bg-gray-50 shadow-sm focus:border-[#4A58C3] focus:ring-[#4A58C3] focus:bg-white sm:text-sm p-3 border transition-all duration-200"
+                                            placeholder="How can we help you?"></textarea>
+                                    </div>
+
+                                    <button type="submit"
+                                        class="w-full flex justify-center py-3 px-4 border border-transparent rounded-xl shadow-md text-sm font-bold text-white bg-gradient-to-r from-[#4A58C3] to-[#3A96DE] hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#4A58C3] disabled:opacity-70 disabled:cursor-not-allowed transition-all transform hover:-translate-y-0.5">
+                                        Send Message
+                                        <!-- Inline Send Icon -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" class="ml-2">
+                                            <path d="m22 2-7 20-4-9-9-4Z" />
+                                            <path d="M22 2 11 13" />
+                                        </svg>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // FAB and Modal Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const fabBtn = document.getElementById('fab-contact-btn');
+            const fabModal = document.getElementById('fab-contact-modal');
+            const fabBackdrop = document.getElementById('fab-modal-backdrop');
+            const fabPanel = document.getElementById('fab-modal-panel');
+            const fabClose = document.getElementById('fab-modal-close');
+            const fabForm = document.getElementById('fab-contact-form');
+            const fabSuccess = document.getElementById('fab-success-message');
+            const fabSendAnother = document.getElementById('fab-send-another');
+
+            function showModal() {
+                fabModal.classList.remove('hidden');
+                // Small delay to allow display:block to apply before opacity transition
+                setTimeout(() => {
+                    fabBackdrop.classList.remove('opacity-0');
+                    fabPanel.classList.remove('scale-95', 'opacity-0');
+                    fabPanel.classList.add('scale-100', 'opacity-100');
+                }, 10);
+                document.body.style.overflow = 'hidden';
+            }
+
+            function hideModal() {
+                fabBackdrop.classList.add('opacity-0');
+                fabPanel.classList.remove('scale-100', 'opacity-100');
+                fabPanel.classList.add('scale-95', 'opacity-0');
+
+                setTimeout(() => {
+                    fabModal.classList.add('hidden');
+                    document.body.style.overflow = '';
+                }, 300); // Match transition duration
+            }
+
+            fabBtn.addEventListener('click', showModal);
+            fabBackdrop.addEventListener('click', hideModal);
+            fabClose.addEventListener('click', hideModal);
+
+            // Close on Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && !fabModal.classList.contains('hidden')) {
+                    hideModal();
+                }
+            });
+
+            // Reset form view
+            fabSendAnother.addEventListener('click', () => {
+                fabSuccess.classList.add('hidden');
+                fabForm.classList.remove('hidden');
+                fabForm.reset();
+            });
+
+            // Form Handling
+            fabForm.addEventListener('submit', async function (e) {
+                e.preventDefault();
+                const form = e.target;
+                const data = new FormData(form);
+                const submitBtn = form.querySelector('button[type="submit"]');
+                const originalBtnContent = submitBtn.innerHTML;
+
+                submitBtn.disabled = true;
+                // Inline Loader Icon
+                submitBtn.innerHTML = 'Sending... <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2 animate-spin"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg>';
+
+                try {
+                    const response = await fetch(form.action, {
+                        method: form.method,
+                        body: data,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+
+                    if (response.ok) {
+                        fabForm.classList.add('hidden');
+                        fabSuccess.classList.remove('hidden');
+                    } else {
+                        alert('Something went wrong. Please try again.');
+                    }
+                } catch (error) {
+                    alert('Network error. Please try again.');
+                } finally {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalBtnContent;
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
