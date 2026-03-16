@@ -1,0 +1,82 @@
+/* Mobile nav cleanup */
+@media (max-width: 921px) {
+  /* Only apply a solid panel when the mobile menu is open */
+  .ast-mobile-header-wrap,
+  .ast-mobile-header-content {
+    background: transparent;
+  }
+
+  .ast-main-header-nav-open .ast-mobile-header-content {
+    background: #ffffff;
+    box-shadow: 0 10px 24px rgba(31, 42, 55, 0.12);
+    padding: 10px 12px 16px;
+  }
+
+  .ast-main-header-nav-open .ast-mobile-header-content .main-header-bar-navigation {
+    background: transparent;
+  }
+
+  .ast-mobile-header-content #ast-hf-mobile-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .ast-mobile-header-content #ast-hf-mobile-menu .menu-item {
+    width: 100%;
+  }
+
+  .ast-mobile-header-content #ast-hf-mobile-menu .menu-link {
+    display: block;
+    width: 100%;
+    padding: 10px 6px;
+    color: #1F2A37;
+  }
+
+  .ast-mobile-header-content #ast-hf-mobile-menu .menu-link:hover,
+  .ast-mobile-header-content #ast-hf-mobile-menu .menu-link:focus {
+    color: #2F6FA5;
+  }
+
+  .ast-mobile-header-content .ast-builder-button-wrap {
+    width: 100%;
+    margin-top: 12px;
+  }
+
+  .ast-mobile-header-content .ast-builder-button-wrap .ast-custom-button-link {
+    display: inline-flex;
+  }
+
+  .ast-mobile-header-content .ast-builder-button-wrap .menu-link {
+    display: none !important;
+  }
+
+  /* Clean up the hamburger/close icon toggle */
+  .ast-mobile-header-wrap .mobile-menu-toggle-icon > span {
+    display: inline-flex;
+  }
+
+  .ast-mobile-header-wrap .main-header-menu-toggle[aria-expanded="false"] .mobile-menu-toggle-icon > span:last-child {
+    display: none;
+  }
+
+  .ast-mobile-header-wrap .main-header-menu-toggle[aria-expanded="true"] .mobile-menu-toggle-icon > span:first-child {
+    display: none;
+  }
+}
+
+/* Lightweight status message for Formspree submissions */
+.odr-form-status {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  color: #2F6FA5;
+}
+
+.odr-form-status.is-error {
+  color: #B42318;
+}
+
+.odr-form-status.is-success {
+  color: #067647;
+}

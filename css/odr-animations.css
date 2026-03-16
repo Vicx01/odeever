@@ -1,0 +1,13 @@
+/* AOS + parallax helper styles */
+.odr-page-hero {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center 0px;
+  will-change: background-position;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .odr-page-hero {
+    background-position: center center;
+  }
+}

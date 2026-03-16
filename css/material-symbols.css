@@ -1,0 +1,116 @@
+:root {
+  --odr-icon-primary: #2F6FA5;
+  --odr-icon-dark: #1F2A37;
+  --odr-icon-accent: #6EC7D6;
+  --odr-icon-light: #F7F9FC;
+}
+
+.material-symbols-rounded,
+.material-symbols-rounded::before,
+i.hm::before,
+i.huge::before,
+.ast-icon.icon-arrow::before,
+.odr-contact-icon::before,
+.odr-send-btn::after {
+  font-family: "Material Symbols Rounded";
+  font-variation-settings: "FILL" 1, "wght" 500, "GRAD" 0, "opsz" 24;
+  font-style: normal;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.material-symbols-rounded {
+  font-size: 1.1em;
+  color: var(--odr-icon-primary);
+}
+
+.material-symbols-rounded.odr-icon-light {
+  color: var(--odr-icon-light);
+}
+
+.material-symbols-rounded.odr-icon-dark {
+  color: var(--odr-icon-dark);
+}
+
+.material-symbols-rounded.odr-icon-accent {
+  color: var(--odr-icon-accent);
+}
+
+i.hm,
+i.huge {
+  font-style: normal;
+  font-size: inherit;
+  line-height: 1;
+}
+
+i.hm::before,
+i.huge::before {
+  color: var(--odr-icon-primary);
+  font-size: inherit;
+}
+
+/* Mapping: footer/contact list icons */
+i.hm.hm-mail-open::before { content: "mail"; }
+i.hm.hm-headphone::before { content: "support_agent"; }
+i.hm.hm-home3::before { content: "location_on"; }
+
+/* Mapping: homepage feature icons */
+i.huge.huge-agreement-01::before { content: "handshake"; }
+i.huge.huge-invoice-01::before { content: "request_quote"; }
+i.huge.huge-task-01::before { content: "task_alt"; }
+i.huge.huge-presentation-01::before { content: "present_to_all"; }
+i.huge.huge-cpu::before { content: "memory"; }
+i.huge.huge-user-group::before { content: "groups"; }
+
+/* Mapping: services icons */
+i.huge.huge-analytics-01::before { content: "analytics"; }
+
+/* Mapping: about core values */
+i.huge.huge-graduation-scroll::before { content: "workspace_premium"; }
+
+/* Replace Astra dropdown arrows */
+.ast-icon.icon-arrow svg { display: none !important; }
+.ast-icon.icon-arrow::before {
+  content: "expand_more";
+  color: currentColor;
+  font-size: 1em;
+}
+
+/* Scroll to top icon */
+#ast-scroll-top .ast-icon.icon-arrow::before {
+  content: "north";
+}
+
+/* Contact page icons */
+.odr-contact-icon svg { display: none; }
+.odr-contact-icon::before {
+  color: var(--odr-icon-light);
+  font-size: 22px;
+}
+.odr-contact-item:nth-of-type(1) .odr-contact-icon::before { content: "location_on"; }
+.odr-contact-item:nth-of-type(2) .odr-contact-icon::before { content: "call"; }
+.odr-contact-item:nth-of-type(3) .odr-contact-icon::before { content: "mail"; }
+
+/* Contact form send button */
+.odr-send-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.odr-send-btn svg { display: none; }
+.odr-send-btn::after {
+  content: "send";
+  color: var(--odr-icon-light);
+  font-size: 18px;
+}
+
+/* Brand colorize remaining SVG social icons (header only) */
+.ast-header-social-1-wrap .ast-builder-social-element {
+  color: var(--odr-icon-primary) !important;
+}
+.ast-header-social-1-wrap svg {
+  fill: currentColor !important;
+}
