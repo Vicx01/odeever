@@ -1,3 +1,24 @@
+/*
+ * Homepage full-width fix
+ * ─────────────────────────────────────────────────────────────────────────────
+ * The homepage uses the Elementor "full-width" template whose sections are
+ * marked `elementor-section-stretched`. Normally, stretched sections use JS to
+ * expand to 100 vw, but their parent `.site-content > .ast-container` has
+ * max-width: 1240px and horizontal padding, so the container stops short of
+ * the viewport edges and the white background of `.site-content` bleeds
+ * through as thin vertical slivers on both sides.
+ *
+ * Fix: on the homepage (`.home` body class) only, reset the ast-container that
+ * wraps the Elementor content so it fills the full available width with no
+ * padding. This doesn't affect the header/footer ast-containers (they live
+ * inside #masthead / #colophon, not inside #content) or any other page.
+ */
+.home #content.site-content > .ast-container {
+  max-width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
+
 /* Mobile nav cleanup */
 @media (max-width: 921px) {
   /* Only apply a solid panel when the mobile menu is open */
